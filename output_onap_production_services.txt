@@ -1,0 +1,199 @@
+ubuntu@sb4-k8s-1:~/oom/kubernetes/onap$ helm install local/onap -n beijing -f onap_production.yaml
+NAME:   beijing
+LAST DEPLOYED: Tue Jul 31 09:37:02 2018
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Secret
+NAME                           TYPE                     DATA  AGE
+beijing-clampdb                Opaque                   1     8s
+beijing-dbc-pg                 Opaque                   3     7s
+beijing-message-router-secret  Opaque                   1     7s
+beijing-nbi-mariadb-secret     Opaque                   2     7s
+beijing-nbi-secret             Opaque                   2     7s
+beijing-so-db                  Opaque                   1     7s
+default-docker-registry-key    kubernetes.io/dockercfg  1     7s
+
+==> v1/ConfigMap
+NAME                                             DATA  AGE
+beijing-clamp-dash-es-configmap                  1     7s
+beijing-clamp-dash-kibana                        2     7s
+beijing-clamp-dash-logstash                      2     7s
+clamp-mariadb-conf-configmap                     1     7s
+clamp-entrypoint-bulkload-configmap              2     7s
+clamp-entrypoint-initdb-configmap                1     7s
+clamp-entrypoint-drop-configmap                  1     7s
+beijing-clamp                                    3     7s
+beijing-clamp-filebeat-configmap                 1     7s
+beijing-dmaap-bus-controller-config              1     7s
+beijing-message-router-msgrtrapi-prop-configmap  1     7s
+beijing-message-router-cadi-prop-configmap       1     7s
+beijing-oof-has-cassandra-docker-entry-initd     1     7s
+beijing-oof-has-music-configmap                  2     7s
+onap-oof-has-configmap                           7     7s
+beijing-oof-configmap                            1     7s
+beijing-robot-resources-configmap                3     7s
+beijing-robot-lighttpd-authorization-configmap   1     7s
+beijing-robot-eteshare-configmap                 4     7s
+confd-configmap                                  1     7s
+so-docker-file-configmap                         1     7s
+so-configmap                                     5     7s
+so-filebeat-configmap                            1     7s
+so-log-configmap                                 11    7s
+
+==> v1beta1/ClusterRoleBinding
+NAME             AGE
+default-binding  6s
+
+==> v1/Service
+NAME                      TYPE       CLUSTER-IP     EXTERNAL-IP  PORT(S)                                                                     AGE
+cdash-es-tcp              ClusterIP  10.43.29.243   <none>       9300/TCP                                                                    6s
+cdash-es                  ClusterIP  10.43.160.207  <none>       9200/TCP                                                                    6s
+cdash-kibana              NodePort   10.43.161.226  <none>       5601:30290/TCP                                                              5s
+cdash-ls                  ClusterIP  10.43.221.239  <none>       9600/TCP                                                                    5s
+clampdb                   ClusterIP  10.43.165.67   <none>       3306/TCP                                                                    5s
+clamp                     NodePort   10.43.130.182  <none>       8080:30295/TCP                                                              5s
+dbc-pg-replica            ClusterIP  10.43.11.143   <none>       5432/TCP                                                                    5s
+dbc-postgres              ClusterIP  10.43.25.91    <none>       5432/TCP                                                                    5s
+dbc-pg-primary            ClusterIP  10.43.69.96    <none>       5432/TCP                                                                    5s
+dmaap-bc                  NodePort   10.43.141.107  <none>       8080:30241/TCP,8443:30242/TCP                                               5s
+message-router-kafka      ClusterIP  10.43.30.171   <none>       9092/TCP                                                                    5s
+message-router-zookeeper  ClusterIP  None           <none>       2181/TCP                                                                    5s
+message-router            NodePort   10.43.17.17    <none>       3904:30227/TCP,3905:30226/TCP                                               4s
+nbi-mariadbhost           ClusterIP  None           <none>       3306/TCP                                                                    4s
+nbi-mongohost             ClusterIP  None           <none>       27017/TCP                                                                   4s
+nbi-mongohost-read        ClusterIP  10.43.178.221  <none>       27017/TCP                                                                   4s
+nbi                       NodePort   10.43.231.235  <none>       8080:30274/TCP                                                              4s
+oof-has-api               NodePort   10.43.156.209  <none>       8091:30275/TCP                                                              4s
+oof-has-cassandra         ClusterIP  10.43.112.71   <none>       9160/TCP,7000/TCP,7001/TCP,7199/TCP,9042/TCP                                4s
+oof-has-music             NodePort   10.43.221.253  <none>       8080:30276/TCP                                                              4s
+oof-has-zk                ClusterIP  10.43.120.212  <none>       2181/TCP                                                                    4s
+oof-osdf                  NodePort   10.43.211.154  <none>       8698:30248/TCP                                                              4s
+robot                     NodePort   10.43.222.183  <none>       88:30209/TCP                                                                4s
+sniro-emulator            NodePort   10.43.64.157   <none>       80:30288/TCP                                                                4s
+so-db                     NodePort   10.43.16.80    <none>       3306:30252/TCP                                                              4s
+so                        NodePort   10.43.11.96    <none>       8080:30223/TCP,3904:30225/TCP,3905:30224/TCP,9990:30222/TCP,8787:30250/TCP  3s
+
+==> v1beta1/Deployment
+NAME                              DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+beijing-clamp-dash-es             1        1        1           0          3s
+beijing-clamp-dash-kibana         1        1        1           0          3s
+beijing-clamp-dash-logstash       1        1        1           0          3s
+beijing-clampdb                   1        1        1           0          3s
+beijing-clamp                     1        1        1           0          3s
+beijing-dmaap-bus-controller      1        1        1           0          3s
+beijing-message-router-kafka      1        1        1           0          3s
+beijing-message-router-zookeeper  1        1        1           0          3s
+beijing-message-router            1        1        1           0          3s
+beijing-nbi-mariadb               1        0        0           0          3s
+beijing-nbi                       1        0        0           0          3s
+beijing-oof-has-api               1        0        0           0          3s
+beijing-oof-has-cassandra         1        0        0           0          3s
+beijing-oof-has-controller        1        0        0           0          3s
+beijing-oof-has-data              1        0        0           0          3s
+beijing-oof-has-music             1        0        0           0          3s
+beijing-oof-has-reservation       1        0        0           0          2s
+beijing-oof-has-solver            1        0        0           0          2s
+beijing-oof-has-zookeeper         1        0        0           0          2s
+beijing-oof                       1        0        0           0          2s
+beijing-robot                     1        0        0           0          2s
+beijing-sniro-emulator            1        0        0           0          2s
+beijing-so-db                     1        0        0           0          2s
+beijing-so                        1        0        0           0          2s
+
+==> v1beta1/StatefulSet
+NAME               DESIRED  CURRENT  AGE
+beijing-dbc-pg     2        1        2s
+beijing-nbi-mongo  1        1        2s
+
+==> v1/PersistentVolume
+NAME                              CAPACITY  ACCESS MODES  RECLAIM POLICY  STATUS     CLAIM                                         STORAGECLASS  REASON  AGE
+beijing-clamp-dash-es             4Gi       RWX           Retain          Bound      default/beijing-clamp-dash-es                 6s
+beijing-clampdb                   2Gi       RWX           Retain          Bound      default/beijing-clampdb                       6s
+beijing-dbc-pg-data1              1Gi       RWO           Retain          Bound      default/beijing-dbc-pg-data-beijing-dbc-pg-0  beijing-dbc-pg-data  6s
+beijing-dbc-pg-data0              1Gi       RWO           Retain          Available  beijing-dbc-pg-data                           6s
+beijing-message-router-kafka      2Gi       RWX           Retain          Bound      default/beijing-message-router-kafka          6s
+beijing-message-router-zookeeper  2Gi       RWX           Retain          Bound      default/beijing-message-router-zookeeper      6s
+beijing-nbi-mariadb               2Gi       RWX           Retain          Bound      default/beijing-nbi-mariadb                   6s
+beijing-nbi-mongo-data            1Gi       RWX           Retain          Bound      default/beijing-nbi-mongo-data                beijing-nbi-mongo-data  6s
+beijing-oof-has-cassandra         2Gi       RWX           Retain          Bound      default/beijing-oof-has-cassandra             6s
+beijing-robot                     2Gi       RWX           Retain          Bound      default/beijing-robot                         6s
+beijing-so-db                     2Gi       RWX           Retain          Bound      default/beijing-so-db                         6s
+
+==> v1/PersistentVolumeClaim
+NAME                              STATUS  VOLUME                            CAPACITY  ACCESS MODES  STORAGECLASS  AGE
+beijing-clamp-dash-es             Bound   beijing-clamp-dash-es             4Gi       RWX           6s
+beijing-clampdb                   Bound   beijing-clampdb                   2Gi       RWX           6s
+beijing-message-router-kafka      Bound   beijing-message-router-kafka      2Gi       RWX           6s
+beijing-message-router-zookeeper  Bound   beijing-message-router-zookeeper  2Gi       RWX           6s
+beijing-nbi-mariadb               Bound   beijing-nbi-mariadb               2Gi       RWX           6s
+beijing-nbi-mongo-data            Bound   beijing-nbi-mongo-data            1Gi       RWX           beijing-nbi-mongo-data  6s
+beijing-oof-has-cassandra         Bound   beijing-oof-has-cassandra         2Gi       RWX           6s
+beijing-robot                     Bound   beijing-robot                     2Gi       RWX           6s
+beijing-so-db                     Bound   beijing-so-db                     2Gi       RWX           6s
+
+==> v1/Pod(related)
+NAME                                               READY  STATUS             RESTARTS  AGE
+beijing-clamp-dash-es-86c9ff57b9-n8zhr             0/1    Init:0/1           0         3s
+beijing-clamp-dash-kibana-86475b98f4-gnp8r         0/1    Init:0/2           0         3s
+beijing-clamp-dash-logstash-7965bfc48d-d8r5d       0/1    Init:0/1           0         3s
+beijing-clampdb-67bf8f9c76-4r452                   0/1    ContainerCreating  0         3s
+beijing-clamp-57465c779c-t6gz4                     0/2    Init:0/1           0         3s
+beijing-dmaap-bus-controller-77bf7fdc65-298pn      0/1    Init:0/1           0         3s
+beijing-message-router-kafka-7956897b45-4s9zk      0/1    Init:0/2           0         3s
+beijing-message-router-zookeeper-59cd76ccb7-znq7p  0/1    Init:0/1           0         3s
+beijing-message-router-55fb996fb6-scr8b            0/1    Init:0/1           0         3s
+beijing-nbi-mariadb-5db4cf996d-ppfq7               0/1    ContainerCreating  0         2s
+beijing-nbi-85c5dbd94b-4p72d                       0/1    Pending            0         2s
+beijing-oof-has-api-dfdc5d8db-ztspm                0/1    Pending            0         2s
+beijing-oof-has-cassandra-6d7d8fdf69-fchj4         0/1    Pending            0         2s
+beijing-oof-has-controller-67875484cf-2nhrb        0/1    Init:0/1           0         2s
+beijing-oof-has-data-679bd99665-tsqts              0/1    Pending            0         1s
+beijing-oof-has-music-c4d6659cf-rw8hr              0/1    Pending            0         1s
+beijing-dbc-pg-0                                   0/1    Pending            0         2s
+beijing-nbi-mongo-0                                0/1    Pending            0         1s
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ubuntu@sb4-k8s-1:~/oom/kubernetes/onap$ kubectl get pods --all-namespaces -o=wide
+NAMESPACE     NAME                                                READY     STATUS              RESTARTS   AGE       IP              NODE
+default       beijing-clamp-57465c779c-t6gz4                      0/2       Init:0/1            0          3m        <none>          sb4-k8s-2
+default       beijing-clamp-dash-es-86c9ff57b9-n8zhr              0/1       PodInitializing     0          3m        10.42.129.18    sb4-k8s-2
+default       beijing-clamp-dash-kibana-86475b98f4-gnp8r          0/1       Init:0/2            0          3m        10.42.96.1      sb4-k8s-3
+default       beijing-clamp-dash-logstash-7965bfc48d-d8r5d        0/1       Init:0/1            0          3m        10.42.26.193    sb4-k8s-1
+default       beijing-clampdb-67bf8f9c76-4r452                    0/1       ContainerCreating   0          3m        <none>          sb4-k8s-1
+default       beijing-dbc-pg-0                                    0/1       Init:0/1            0          3m        <none>          sb4-k8s-1
+default       beijing-dmaap-bus-controller-77bf7fdc65-298pn       0/1       Init:0/1            0          3m        10.42.156.135   sb4-k8s-3
+default       beijing-message-router-55fb996fb6-scr8b             0/1       Init:0/1            0          3m        10.42.221.17    sb4-k8s-3
+default       beijing-message-router-kafka-7956897b45-4s9zk       0/1       Init:1/2            0          3m        10.42.101.154   sb4-k8s-3
+default       beijing-message-router-zookeeper-59cd76ccb7-znq7p   0/1       PodInitializing     0          3m        10.42.213.86    sb4-k8s-3
+default       beijing-nbi-85c5dbd94b-4p72d                        0/1       ContainerCreating   0          3m        <none>          sb4-k8s-1
+default       beijing-nbi-mariadb-5db4cf996d-ppfq7                0/1       ContainerCreating   0          3m        <none>          sb4-k8s-2
+default       beijing-nbi-mongo-0                                 0/1       ContainerCreating   0          3m        <none>          sb4-k8s-3
+default       beijing-oof-54cbb78dd6-rc7kg                        0/1       Init:0/1            0          3m        <none>          sb4-k8s-2
+default       beijing-oof-has-api-dfdc5d8db-ztspm                 0/1       Init:0/1            0          3m        <none>          sb4-k8s-3
+default       beijing-oof-has-cassandra-6d7d8fdf69-fchj4          0/1       ContainerCreating   0          3m        <none>          sb4-k8s-2
+default       beijing-oof-has-controller-67875484cf-2nhrb         0/1       Init:0/1            0          3m        <none>          sb4-k8s-1
+default       beijing-oof-has-data-679bd99665-tsqts               0/1       Init:0/1            0          3m        <none>          sb4-k8s-2
+default       beijing-oof-has-music-c4d6659cf-rw8hr               0/1       Init:0/1            0          3m        <none>          sb4-k8s-1
+default       beijing-oof-has-reservation-6cf7c7f7df-ss27l        0/1       Init:0/1            0          3m        <none>          sb4-k8s-3
+default       beijing-oof-has-solver-5dbdcd476c-7kn44             0/1       Init:0/1            0          3m        <none>          sb4-k8s-2
+default       beijing-oof-has-zookeeper-74886d4595-b8hkm          0/1       ContainerCreating   0          3m        <none>          sb4-k8s-3
+default       beijing-robot-7b6fcb654c-2x66g                      0/1       Init:0/1            0          3m        <none>          sb4-k8s-3
+default       beijing-sniro-emulator-644649b5f5-7xz6b             0/1       ContainerCreating   0          3m        <none>          sb4-k8s-1
+default       beijing-so-57c7bfcd68-xlnf2                         0/2       Init:0/1            0          3m        <none>          sb4-k8s-2
+default       beijing-so-db-585866d658-dstg9                      0/1       Init:0/1            0          3m        <none>          sb4-k8s-1
+kube-system   heapster-76b8cd7b5-2k86p                            1/1       Running             0          2h        10.42.31.80     sb4-k8s-1
+kube-system   kube-dns-5d7b4487c9-kw4gq                           3/3       Running             0          2h        10.42.87.54     sb4-k8s-1
+kube-system   kubernetes-dashboard-f9577fffd-sq4lz                1/1       Running             0          2h        10.42.162.79    sb4-k8s-1
+kube-system   monitoring-grafana-997796fcf-xkf8k                  1/1       Running             0          2h        10.42.57.247    sb4-k8s-1
+kube-system   monitoring-influxdb-56fdcd96b-gbb7p                 1/1       Running             0          2h        10.42.100.156   sb4-k8s-1
+kube-system   tiller-deploy-54bcc55dd5-6bl46                      1/1       Running             0          2h        10.42.251.182   sb4-k8s-1
+ubuntu@sb4-k8s-1:~/oom/kubernetes/onap$
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+

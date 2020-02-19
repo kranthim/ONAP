@@ -1,0 +1,36 @@
+Getting Started With ONAP:
+https://onap.readthedocs.io/en/beijing/release/index.html#id5
+
+ONAP on Kubernetes with Rancher:
+
+https://onap.readthedocs.io/en/beijing/submodules/oom.git/docs/oom_setup_kubernetes_rancher.html#onap-on-kubernetes-with-rancher
+
+
+/var/lib/cloud
+
+Rancher:
+http://10.24.12.46:8080/env/1a7/infra/hosts
+
+VIm:
+https://10.24.14.11/project/
+
+admin
+Altiostar@!34
+
+
+
+---------------------------------------------------------------------
+sb4-k8s-1   192.168.102.15   10.24.12.70
+sb4-k8s-2   192.168.102.8    10.24.12.28
+sb4-k8s-3   192.168.102.16   10.24.12.92
+
+sb4-rancher 192.168.102.11   10.24.12.37
+
+
+
+
+
+
+
+
+
